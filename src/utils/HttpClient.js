@@ -4,7 +4,7 @@ import {
     apiUrl,
     NOT_CONNECT_NETWORK,
     NETWORK_CONNECTION_MESSAGE,
-  } from "../constance/constance.js";
+  } from "../constance/constance";
   
   const isAbsoluteURLRegex = /^(?:\w+:)\/\//;
   

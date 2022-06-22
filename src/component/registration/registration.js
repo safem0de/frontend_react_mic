@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-
+import axios from "axios";
+import Swal from "sweetalert2";
+import { httpClient } from "../../utils/HttpClient";
 class Registration extends Component {
 
   constructor(props) {
@@ -13,10 +15,28 @@ class Registration extends Component {
     };
   }
 
-  click_button = () => {
+  click_button = async () => {
     console.log(this.state);
     if (this.state.password === this.state.confirmPassword) {
       console.log('password OK');
+      let command = await httpClient.post("user/insert",this.state);
+      console.log(command);
+      if (command.data.api_result === "ok") {
+        Swal.fire({
+          icon: "success",
+          title: "Welcome",
+          text: "to the web-site !!!",
+          showConfirmButton: false,
+          timer: 1000,
+        });
+        window.location.replace("../Log-in");
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Something went wrong!",
+        });
+      }
     } else {
       console.log('password Mistake');
     }
@@ -113,8 +133,7 @@ class Registration extends Component {
         </div>
       </div>
       <div id="torrent-scanner-popup" style={{ display: 'none' }} />
-    </div>
-      ;
+    </div>;
   }
 }
 
