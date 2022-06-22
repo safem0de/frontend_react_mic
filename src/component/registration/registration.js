@@ -19,7 +19,7 @@ class Registration extends Component {
     console.log(this.state);
     if (this.state.password === this.state.confirmPassword) {
       console.log('password OK');
-      let command = await httpClient.post("user/insert",this.state);
+      let command = await httpClient.post("user/insert", this.state);
       console.log(command);
       if (command.data.api_result === "ok") {
         Swal.fire({
@@ -52,71 +52,71 @@ class Registration extends Component {
           <div className="card-body">
             <p className="login-box-msg">Register a new membership</p>
             {/* <form action="../../index.html" method="post"> */}
-              <div className="input-group mb-3">
-                <input type="text" className="form-control" placeholder="Username"
-                  value={this.state.username}
-                  onChange={(e) => {
-                    this.setState({ username: e.target.value });
+            <div className="input-group mb-3">
+              <input type="text" className="form-control" placeholder="Username"
+                value={this.state.username}
+                onChange={(e) => {
+                  this.setState({ username: e.target.value });
+                }}
+              />
+              <div className="input-group-append">
+                <div className="input-group-text">
+                  <span className="fas fa-user" />
+                </div>
+              </div>
+            </div>
+            <div className="input-group mb-3">
+              <input type="text" className="form-control" placeholder="Employee No."
+                value={this.state.empNumber}
+                onChange={(e) => {
+                  this.setState({ empNumber: e.target.value });
+                }}
+              />
+              <div className="input-group-append">
+                <div className="input-group-text">
+                  <span className="fas fa-envelope" />
+                </div>
+              </div>
+            </div>
+            <div className="input-group mb-3">
+              <input type="password" className="form-control" placeholder="Password"
+                value={this.state.password}
+                onChange={(e) => {
+                  this.setState({ password: e.target.value });
+                }}
+              />
+              <div className="input-group-append">
+                <div className="input-group-text">
+                  <span className="fas fa-lock" />
+                </div>
+              </div>
+            </div>
+            <div className="input-group mb-3">
+              <input type="password" className="form-control" placeholder="Retype password"
+                value={this.state.confirmPassword}
+                onChange={(e) => {
+                  this.setState({ confirmPassword: e.target.value });
+                }}
+              />
+              <div className="input-group-append">
+                <div className="input-group-text">
+                  <span className="fas fa-lock" />
+                </div>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-8">
+                <a href="/login" className="Nav-Link">Go to Login</a>
+              </div>
+              <div className="col-4">
+                <button type="submit" className="btn btn-primary btn-block"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    this.click_button();
                   }}
-                />
-                <div className="input-group-append">
-                  <div className="input-group-text">
-                    <span className="fas fa-user" />
-                  </div>
-                </div>
+                >Register</button>
               </div>
-              <div className="input-group mb-3">
-                <input type="text" className="form-control" placeholder="Employee No."
-                  value={this.state.empNumber}
-                  onChange={(e) => {
-                    this.setState({ empNumber: e.target.value });
-                  }}
-                />
-                <div className="input-group-append">
-                  <div className="input-group-text">
-                    <span className="fas fa-envelope" />
-                  </div>
-                </div>
-              </div>
-              <div className="input-group mb-3">
-                <input type="password" className="form-control" placeholder="Password"
-                  value={this.state.password}
-                  onChange={(e) => {
-                    this.setState({ password: e.target.value });
-                  }}
-                />
-                <div className="input-group-append">
-                  <div className="input-group-text">
-                    <span className="fas fa-lock" />
-                  </div>
-                </div>
-              </div>
-              <div className="input-group mb-3">
-                <input type="password" className="form-control" placeholder="Retype password"
-                  value={this.state.confirmPassword}
-                  onChange={(e) => {
-                    this.setState({ confirmPassword: e.target.value });
-                  }}
-                />
-                <div className="input-group-append">
-                  <div className="input-group-text">
-                    <span className="fas fa-lock" />
-                  </div>
-                </div>
-              </div>
-              <div className="row">
-                <div className="col-8">
-                  <a href="/login" className="Nav-Link">Go to Login</a>
-                </div>
-                <div className="col-4">
-                  <button type="submit" className="btn btn-primary btn-block"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      this.click_button();
-                    }}
-                  >Register</button>
-                </div>
-              </div>
+            </div>
             {/* </form> */}
             <div className="social-auth-links text-center">
               {/* <a href="#" className="btn btn-block btn-primary">
