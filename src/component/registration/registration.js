@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import axios from "axios";
+// import axios from "axios";
 import Swal from "sweetalert2";
 import { httpClient } from "../../utils/HttpClient";
 class Registration extends Component {

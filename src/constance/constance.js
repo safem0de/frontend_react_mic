@@ -1,6 +1,8 @@
 export const apiUrl = "http://localhost:2005/"; // <<<<< same back end  >>>>>>
 
-
+export const key = {
+  LOGIN_PASSED: "LOGIN_PASSED",
+};
 export const NETWORK_CONNECTION_MESSAGE =
   "Cannot connect to server, Please try again.";
 export const NETWORK_TIMEOUT_MESSAGE =
